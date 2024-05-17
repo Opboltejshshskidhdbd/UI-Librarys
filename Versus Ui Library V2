@@ -1,0 +1,53 @@
+local library = loadstring(game:HttpGet("https://gitlab.com/Ner0ox/versus/-/raw/main/ui/UIV2.lua", true))()
+local ui = library:CreateWindow("Test Name")
+
+local Main = ui:new("Main")
+local Misc = ui:new("Misc")
+
+local VU = game:GetService("VirtualUser")
+local Player = game:GetService("Players").LocalPlayer
+local WS = game:GetService("Workspace")
+local RS = game:GetService("ReplicatedStorage")
+
+-- Anti Afk
+Player.Idled:Connect(function()
+    VU:Button2Down(Vector2.new(0, 0), WS.CurrentCamera.CFrame)
+    wait(1)
+    VU:Button2Up(Vector2.new(0, 0), WS.CurrentCamera.CFrame)
+end)
+
+-- Main
+Main:CreateLabel("I'm Cool!")
+
+Main:CreateButton("Test Button", function()
+    print("Hello World!")
+end)
+
+Main:CreateToggle("Test Toggle", true, function()
+    --this ofc is the toggle :D
+end)
+
+Main:CreateDropdown("Test Dropdown", {"Woo", "Yes"}, function(ah)
+    --Selectedah = ah;
+end)
+
+Main:CreateSlider("Test Slider", {min = 16, max = 200, default = 16}, function(state)
+    --Player.Character.Humanoid.WalkSpeed = state
+end)
+
+
+-- Misc
+
+Misc:CreateButton("Copy Discord Invite", function()
+    setclipboard("https://discord.gg/8zzP4fXNFz")
+end)
+
+Misc:CreateButton("Uninject", function()
+    game:GetService("CoreGui")["UI V2"]:Destroy()
+end)
+
+Misc:CreateButton("Uninject and Rejoin", function()
+	local TeleportService = game:GetService("TeleportService")
+    game:GetService("CoreGui")["UI V2"]:Destroy()
+    TeleportService:Teleport(game.PlaceId)
+end)
