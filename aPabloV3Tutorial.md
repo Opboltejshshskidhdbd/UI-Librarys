@@ -9,7 +9,7 @@ Let's start!
 
 ### 1. To create the lib use this code:
 ```lua
-local PabloLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/PabloLibV3/main/PabloLibV3"))()
+local PabloLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Opboltejshshskidhdbd/-back-ups-for-libs/main/PabloLibV3.txt"))()
 ```
 
 ###  2. To get the lib use this code:
